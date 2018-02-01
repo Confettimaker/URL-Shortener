@@ -1,4 +1,4 @@
-from sqlitewrapper.py import *
+from sqlitewrapper import *
 from datetime import date
 
 db = Database('sites.db')
