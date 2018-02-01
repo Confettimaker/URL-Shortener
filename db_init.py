@@ -1,8 +1,7 @@
-import sqlite3 as sql
+from sqlitewrapper.py import *
 from datetime import date
 
-connection = sql.connect('sites.db')
-cursor = connection.cursor()
+db = Database('sites.db')
 
 cmd = """
       CREATE TABLE pairs (
@@ -11,10 +10,11 @@ cmd = """
       );
       """
 
-cursor.execute(cmd)
+db.command(cmd)
 
-connection.commit() #save
+db.save()
 
-connection.close()
+db.close()
 
 input('Finished...')
+
